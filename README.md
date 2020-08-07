@@ -1,2 +1,5 @@
+# Azure Delegated Resource Management
 
- [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Lighthouse-samples%2Fmaster%2Ftemplates%2Fdelegated-resource-management%2FdelegatedResourceManagement.json) 
+This template enables your customer to project their subscription into your Managed Service Provider tenant
+
+*NOTE*: You must modify the parameter file to reflect your environment before deploying

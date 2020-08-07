@@ -1,0 +1,46 @@
+{
+
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentParameters.json#",
+
+  "contentVersion": "1.0.0.0",
+
+  "parameters": {
+
+    "mspName": {
+
+      "value": "THG"
+
+    },
+
+    "mspOfferDescription": {
+
+      "value": "THG"
+
+    },
+
+    "managedByTenantId": {
+
+      "value": "1d3bdd24-8ca7-4b5a-9984-6d3cd45ee2c4"
+
+    },
+
+    "authorizations": {
+
+      "value": [
+
+        {
+
+          "principalId": "14898fc9-98cc-49f8-8709-b0fc9a6b4aab",
+
+
+          "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7"
+
+        }
+      ]
+
+
+    }
+
+  }
+
+}
