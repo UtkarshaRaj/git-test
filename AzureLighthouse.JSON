@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {
+        "mspRegistrationName": "[guid(variables('mspName'))]",
+        "mspAssignmentName": "[guid(variables('mspName'))]",
+        "managedByTenantId": "1d3bdd24-8ca7-4b5a-9984-6d3cd45ee2c4",
+        "mspOfferDescription": "Elite",
+        "mspName": "THG",
+        "authorizations": [
+            {
+                "principalId": "de9dc129-f2cb-4672-9bf6-6fb203ca2b53",
+                "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c"
+            }
+        ]
+    },
+    "resources": [
+        {
+            "type": "Microsoft.ManagedServices/registrationDefinitions",
+            "apiVersion": "2019-06-01",
+            "name": "[variables('mspRegistrationName')]",
+            "properties": {
+                "registrationDefinitionName": "[variables('mspName')]",
+                "description": "[variables('mspOfferDescription')]",
+                "managedByTenantId": "[variables('managedByTenantId')]",
+                "authorizations": "[variables('authorizations')]"
+            }
+        },
+        {
+            "type": "Microsoft.ManagedServices/registrationAssignments",
+            "apiVersion": "2019-06-01",
+            "name": "[variables('mspAssignmentName')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
+            ],
+            "properties": {
+                "registrationDefinitionId": "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
+            }
+        }
+    ]
+}
